@@ -3,6 +3,7 @@ import ChatBoxInputArea from './ChatBoxInputArea.vue';
 import { defineEmits } from 'vue';
 
 const emit = defineEmits(['closeChatBox']);
+
 </script>
 
 <template>
