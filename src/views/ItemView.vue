@@ -8,10 +8,10 @@ import { useFoodDataStore } from '@/stores/fooddata';
 const route = useRoute()
 
 const foodData = useFoodDataStore()
-foodData.refresh(parseInt(route.params.id))
+foodData.refresh(parseInt(route.params.id as string))
 
 watch(() => route.params.id, () => {
-    foodData.refresh(parseInt(route.params.id))
+    foodData.refresh(parseInt(route.params.id as string))
 })
 
 </script>

@@ -44,8 +44,8 @@ const loadMoreItems = async () => {
 
 const imageUrlPrefix = ref('http://localhost:10240/files/')
 
-const liClicked = (index: number)=>{
-    router.push('/item/'+index)
+const liClicked = (index: number | undefined) => {
+    router.push('/item/' + index)
 }
 </script>
 
@@ -55,10 +55,12 @@ const liClicked = (index: number)=>{
         <!-- <el-row v-for="n in 16" justify="space-around" align="middle"> -->
         <el-row v-for="i in count" :key="i" justify="space-around" align="middle">
             <el-col :xs="23" :sm="18" :md="14" :lg="10" :xl="6">
-                <ListShowcaseItem :imageUrl="imageUrlPrefix+foodData[i-1].thumbnail_path" @click="liClicked(foodData[i-1].id)">
+                <ListShowcaseItem :imageUrl="imageUrlPrefix + foodData[i - 1].thumbnail_path"
+                    @click="liClicked(foodData[i - 1].id)">
                     <template #title>{{ foodData[i - 1].title }}</template>
                     <template #rating>{{ foodData[i - 1].rating }}分</template>
-                    <template v-if="foodData[i - 1].sales_monthly" #salesMonthly>{{ foodData[i - 1].sales_monthly }}人已点</template>
+                    <template v-if="foodData[i - 1].sales_monthly" #salesMonthly>{{ foodData[i - 1].sales_monthly
+                    }}人已点</template>
                 </ListShowcaseItem>
             </el-col>
         </el-row>

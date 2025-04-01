@@ -10,14 +10,14 @@ const foodData = useFoodDataStore()
                 :src="'https://furina.yelr.de/files/' + foodData.foodData?.thumbnail_path" />
         </div>
         <div v-for="i in foodData.foodData?.items?.length" class="itemWrap">
-            <h3>{{ foodData.foodData?.items[i - 1].name }}</h3>
+            <h3>{{ foodData.foodData?.items?.[i - 1].name }}</h3>
             <el-row>
                 <el-col :span="24">
-                    <el-text>{{ foodData.foodData?.items[i - 1].description }}</el-text>
+                    <el-text>{{ foodData.foodData?.items?.[i - 1].description }}</el-text>
                 </el-col>
             </el-row>
             <div class="gapSmallVertical"></div>
-            <el-text tag="b" type="danger">{{ foodData.foodData?.items[i - 1].price }}元</el-text>
+            <el-text tag="b" type="danger">{{ foodData.foodData?.items?.[i - 1].price }}元</el-text>
         </div>
     </el-container>
 </template>
