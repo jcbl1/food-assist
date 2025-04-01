@@ -42,7 +42,7 @@ const loadMoreItems = async () => {
     loading.value = false
 }
 
-const imageUrlPrefix = ref('http://localhost:10240/files/')
+const imageUrlPrefix = ref('https://furina.yelr.de/files/')
 
 const liClicked = (index: number | undefined) => {
     router.push('/item/' + index)
