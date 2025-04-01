@@ -1,31 +1,13 @@
 <script setup lang="ts">
-export interface FoodDataItem {
-    id?: number;
-    name: string;
-    description: string;
-    price: number;
-    foodDataId: number;
-}
-export interface FoodData {
-    id?: number;
-    thumbnailPath: string;
-    title: string;
-    rating: number;
-    salesMonthly: number;
-    averageCost?: number;
-    deliveryTime?: string;
-    featuredComment?: string;
-    items?: FoodDataItem[];
-}
+defineProps({
+    imageUrl: String
+})
+
 </script>
 <template>
     <el-container class="marginSmall">
         <el-aside width="120px">
-            <el-skeleton>
-                <template #template>
-                    <el-skeleton-item variant="image" style="width: 120px; height: 120px;"></el-skeleton-item>
-                </template>
-            </el-skeleton>
+            <el-image style="width: 120px; height: 120px;" class="round" fit="cover" :src="imageUrl" />
         </el-aside>
         <el-main class="pd-5">
             <slot></slot>
@@ -38,7 +20,7 @@ export interface FoodData {
                         <slot name="rating">0.0分</slot>
                     </el-text>
                     <el-text>
-                        <slot name="salesMonthly">还没得人点</slot>
+                        <slot name="salesMonthly">还没有人点</slot>
                     </el-text>
                 </el-col>
                 <el-col :span="12" class="textRight">
@@ -69,5 +51,9 @@ export interface FoodData {
 
 .textRight {
     text-align: right;
+}
+
+.round {
+    border-radius: 7px;
 }
 </style>

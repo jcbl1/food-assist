@@ -7,14 +7,14 @@ import ChatBox from '@/components/ChatBox.vue';
 import { ref } from 'vue';
 
 const chatBoxVisible = ref(false);
-const toggleChatBox = ()=>{
+const toggleChatBox = () => {
   chatBoxVisible.value = !chatBoxVisible.value;
 }
 </script>
 <template>
   <div class="fillView">
     <Transition name="fade">
-      <ChatBox v-show="chatBoxVisible" id="chatbox" @closeChatBox="()=>toggleChatBox()"/>
+      <ChatBox v-show="chatBoxVisible" id="chatbox" @closeChatBox="() => toggleChatBox()" />
     </Transition>
     <el-container direction="vertical" style="height: 100%;">
       <HomeHeader class="stickTop" />
@@ -37,22 +37,26 @@ const toggleChatBox = ()=>{
   width: 100vw;
   height: 100vh;
 }
+
 .stickTop {
   position: sticky;
   top: 0;
   z-index: 100;
 }
+
 .stickBottom {
   position: sticky;
   bottom: 0;
   z-index: 100;
 }
+
 #buttonAskAI {
   position: absolute;
   bottom: 4em;
   right: 1em;
   z-index: 200;
 }
+
 #chatbox {
   z-index: 150;
   position: absolute;
@@ -62,12 +66,15 @@ const toggleChatBox = ()=>{
   width: 95vw;
   max-height: 80vh;
 }
+
 .bg-f00 {
   background-color: #f00;
 }
+
 .opacity-5 {
   opacity: 0.5;
 }
+
 .z-149 {
   z-index: 149;
 }
@@ -76,6 +83,7 @@ const toggleChatBox = ()=>{
 .fade-leave-active {
   transition: opacity 0.5s ease;
 }
+
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;

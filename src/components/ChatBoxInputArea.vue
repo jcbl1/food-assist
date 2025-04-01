@@ -5,12 +5,15 @@ const chatBoxInputValue = ref('')
 </script>
 
 <template>
-   <el-container>
-    <el-input type="textarea" placeholder="Apple U, 今天想吃什么" resize="none" v-model="chatBoxInputValue" clearable :autosize="{minRows: 1, maxRows: 3}"></el-input>
-    <el-button type="primary" circle>
-        <el-icon><ArrowUpBold /></el-icon>
-    </el-button>
-   </el-container>
+    <el-container>
+        <el-input type="textarea" placeholder="Apple U, 今天想吃什么" resize="none" v-model="chatBoxInputValue" clearable
+            :autosize="{ minRows: 1, maxRows: 3 }"></el-input>
+        <el-button type="primary" circle>
+            <el-icon>
+                <ArrowUpBold />
+            </el-icon>
+        </el-button>
+    </el-container>
 </template>
 
 <style>
