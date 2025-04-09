@@ -40,7 +40,8 @@ const liClicked = (index: number | undefined) => {
 
 <template>
     <el-container v-infinite-scroll="loadMoreItems" :infinite-scroll-disabled="!hasMore || loading"
-        :infinite-scroll-delay="200" :infinite-scroll-immediate="true" direction="vertical">
+        :infinite-scroll-delay="200" :infinite-scroll-immediate="true" :infinite-scroll-distance="200"
+        direction="vertical">
         <!-- <el-row v-for="n in 16" justify="space-around" align="middle"> -->
         <el-row v-for="i in count" :key="i" justify="space-around" align="middle">
             <el-col :xs="23" :sm="18" :md="14" :lg="10" :xl="6">
