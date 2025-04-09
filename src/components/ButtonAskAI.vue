@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <el-button type="primary" round>Ask AI</el-button>
+    <el-button type="primary" round>问问AI</el-button>
 </template>
 
 <style scoped>

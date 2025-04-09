@@ -8,7 +8,7 @@ export const authorizedInstance = axios.create({
         "Content-Type": "application/json",
         Authorization: "Bearer " + sessionStorage.getItem("token"),
     },
-    timeout: 10000,
+    timeout: 1000000,
 })
 
 authorizedInstance.interceptors.response.use(response => {
