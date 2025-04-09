@@ -23,17 +23,6 @@ const loadMoreItems = async () => {
         resCount = response.length
         foodData.value = foodData.value.concat(response)
         count.value += resCount
-    }).catch((error) => {
-        if (axios.isAxiosError(error)) {
-            log("error: " + error.message)
-            if (error.request) {
-                log("method: " + error.config?.method)
-                log("url: " + error.config?.url)
-                log("headers: " + error.config?.headers)
-            }
-        } else {
-            log("error: " + error)
-        }
     }).finally(() => {
         if (resCount < 5) {
             hasMore.value = false
@@ -60,7 +49,7 @@ const liClicked = (index: number | undefined) => {
                     <template #title>{{ foodData[i - 1].title }}</template>
                     <template #rating>{{ foodData[i - 1].rating }}分</template>
                     <template v-if="foodData[i - 1].sales_monthly" #salesMonthly>{{ foodData[i - 1].sales_monthly
-                    }}人已点</template>
+                        }}人已点</template>
                 </ListShowcaseItem>
             </el-col>
         </el-row>

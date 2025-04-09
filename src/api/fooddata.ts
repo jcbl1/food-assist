@@ -1,4 +1,4 @@
-import axios from "axios"
+import { authorizedInstance } from "./axios";
 
 export interface FoodDataItem {
     id?: number;
@@ -20,16 +20,11 @@ export interface FoodData {
 }
 
 export const useQueryFoodData = async (current: number) => {
-    const queryUrl = 'https://furina.yelr.de/food/list?current=' + current
-    // console.log("queryUrl: %s", queryUrl)
-    const response = await axios.get<FoodData[]>(queryUrl)
-    // const response = await axios.get<FoodData[]>('http://localhost:10240/food/list')
+    const response = await authorizedInstance.get<FoodData[]>('/food/list?current=' + current)
     return response.data;
 }
 
 export const useQueryFoodDataById = async (id: number) => {
-    const queryUrl = 'https://furina.yelr.de/food?id=' + id
-    console.log('queryUrl: %s', queryUrl)
-    const response = await axios.get<FoodData>(queryUrl)
+    const response = await authorizedInstance.get<FoodData>('/food?id=' + id)
     return response.data
 }
