@@ -2,15 +2,19 @@
 import { useLogin } from '@/api/auth';
 import axios from 'axios';
 import { ElNotification } from 'element-plus';
+import { ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
 const router = useRouter()
 const route = useRoute()
 
+const username = ref('')
+const password = ref('')
+
 const login = async () => {
     console.log('logging in...')
     try {
-        const token = await useLogin('user', 'password')
+        const token = await useLogin(username.value, password.value)
         if (token) {
             console.log('got token: ', token)
             sessionStorage.setItem('token', token)
@@ -50,11 +54,20 @@ const login = async () => {
                 <h3 style="margin: 0; text-align: center;">登录</h3>
             </template>
             <template #default>
-                <el-button round type="primary" @click="login">
-                    <el-icon>
+                <el-form>
+                    <el-form-item label="用户名">
+                        <el-input style="width: 150px;" placeholder="用户名" type="text" v-model="username"></el-input>
+                    </el-form-item>
+                    <el-form-item label="密码">
+                        <el-input style="width: 150px; margin-left: auto;" placeholder="密码" type="password"
+                            v-model="password" show-password></el-input>
+                    </el-form-item>
+                </el-form>
+                <el-button round type="primary" @click="login" :disabled="!username||!password">
+                    <!-- <el-icon>
                         <SwitchFilled />
-                    </el-icon>
-                    智能验证并登录</el-button>
+                    </el-icon> -->
+                    登录</el-button>
             </template>
         </el-card>
     </div>
