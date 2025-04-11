@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useFoodDataStore } from '@/stores/fooddata';
-import { useRouter } from 'vue-router';
+import { useFoodDataStore } from '@/stores/fooddata'
+import { useRouter } from 'vue-router'
 const router = useRouter()
 const foodData = useFoodDataStore()
 </script>
@@ -14,7 +14,7 @@ const foodData = useFoodDataStore()
       </el-button>
     </el-col>
     <el-col :span="16" class="textCenter">
-      <el-text tag="b" style="font-size: 16px;">
+      <el-text tag="b" style="font-size: 16px">
         <slot name="itemName">{{ foodData.foodData?.title }}</slot>
       </el-text>
     </el-col>

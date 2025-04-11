@@ -33,7 +33,7 @@ const router = createRouter({
       path: '/item/:id',
       name: 'item',
       component: () => import('@/views/ItemView.vue'),
-    }
+    },
   ],
 })
 

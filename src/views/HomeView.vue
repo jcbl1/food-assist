@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import HomeHeader from '@/components/HomeHeader.vue';
-import ListShowcase from '@/components/ListShowcase.vue';
-import BottomNav from '@/components/BottomNav.vue';
-import ButtonAskAI from '@/components/ButtonAskAI.vue';
-import ChatBox from '@/components/chatbox/ChatBox.vue';
-import { ref } from 'vue';
+import HomeHeader from '@/components/HomeHeader.vue'
+import ListShowcase from '@/components/ListShowcase.vue'
+import BottomNav from '@/components/BottomNav.vue'
+import ButtonAskAI from '@/components/ButtonAskAI.vue'
+import ChatBox from '@/components/chatbox/ChatBox.vue'
+import { ref } from 'vue'
 
-const chatBoxVisible = ref(false);
+const chatBoxVisible = ref(false)
 const toggleChatBox = () => {
-  chatBoxVisible.value = !chatBoxVisible.value;
+  chatBoxVisible.value = !chatBoxVisible.value
 }
 </script>
 <template>
@@ -16,7 +16,7 @@ const toggleChatBox = () => {
     <Transition name="fade">
       <ChatBox v-show="chatBoxVisible" id="chatbox" @closeChatBox="() => toggleChatBox()" />
     </Transition>
-    <el-container direction="vertical" style="height: 100%;">
+    <el-container direction="vertical" style="height: 100%">
       <HomeHeader class="stickTop" />
       <el-scrollbar>
         <ListShowcase />
@@ -26,7 +26,12 @@ const toggleChatBox = () => {
   </div>
 
   <ButtonAskAI id="buttonAskAI" @click="toggleChatBox" />
-  <div id="clickToHideChatBox" @click="chatBoxVisible = false" v-show="chatBoxVisible" class="fillView z-149" />
+  <div
+    id="clickToHideChatBox"
+    @click="chatBoxVisible = false"
+    v-show="chatBoxVisible"
+    class="fillView z-149"
+  />
 </template>
 
 <style scoped>
