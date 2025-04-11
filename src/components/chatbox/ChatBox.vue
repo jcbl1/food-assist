@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import ChatBoxInputArea from './ChatBoxInputArea.vue';
-import ChatReply from '@/components/ChatReply.vue';
-import ChatPrompt from '@/components/ChatPrompt.vue';
+import ChatBoxInputArea from '@/components/chatbox/ChatBoxInputArea.vue';
+import ChatReply from '@/components/chatbox/ChatReply.vue';
+import ChatPrompt from '@/components/chatbox/ChatPrompt.vue';
 import { ref } from 'vue';
 import { useAskAi } from '@/api/ai';
 

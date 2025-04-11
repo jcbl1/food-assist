@@ -3,7 +3,7 @@ import HomeHeader from '@/components/HomeHeader.vue';
 import ListShowcase from '@/components/ListShowcase.vue';
 import BottomNav from '@/components/BottomNav.vue';
 import ButtonAskAI from '@/components/ButtonAskAI.vue';
-import ChatBox from '@/components/ChatBox.vue';
+import ChatBox from '@/components/chatbox/ChatBox.vue';
 import { ref } from 'vue';
 
 const chatBoxVisible = ref(false);
