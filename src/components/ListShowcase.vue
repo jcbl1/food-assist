@@ -7,9 +7,9 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
-const log = (message: string) => {
-  console.log(message)
-}
+// const log = (message: string) => {
+//   console.log(message)
+// }
 
 const foodData = ref<FoodData[]>([])
 const count = ref(0)
@@ -17,7 +17,7 @@ const hasMore = ref(true)
 const loading = ref(false)
 const loadMoreItems = async () => {
   loading.value = true
-  log('loading more items')
+  // log('loading more items')
   let resCount = 0
   await useQueryFoodData(count.value / 5 + 1)
     .then((response) => {

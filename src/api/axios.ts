@@ -26,7 +26,7 @@ authorizedInstance.interceptors.response.use(
     if (error.response) {
       switch (error.response.status) {
         case 401:
-          console.log('401 Unauthorized')
+          // console.log('401 Unauthorized')
           // sessionStorage.setItem('unauthorized', 'true')
           break
       }

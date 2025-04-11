@@ -29,7 +29,7 @@ const addComponent = (type: any, props: any) => {
 const replying = ref(false)
 
 const sendPrompt = async (msg: string) => {
-  console.log(msg)
+  // console.log(msg)
   addComponent(ChatPrompt, {
     msg,
   })

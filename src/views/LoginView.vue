@@ -12,11 +12,11 @@ const username = ref('')
 const password = ref('')
 
 const login = async () => {
-  console.log('logging in...')
+  // console.log('logging in...')
   try {
     const token = await useLogin(username.value, password.value)
     if (token) {
-      console.log('got token: ', token)
+      // console.log('got token: ', token)
       sessionStorage.setItem('token', token)
       ElNotification({
         title: '登录成功',
@@ -36,7 +36,7 @@ const login = async () => {
     }
   } catch (err) {
     if (axios.isAxiosError(err)) {
-      console.error('登录失败: ', err.response?.data)
+      // console.error('登录失败: ', err.response?.data)
       ElNotification({
         title: '登录失败',
         message: err.response?.data,
